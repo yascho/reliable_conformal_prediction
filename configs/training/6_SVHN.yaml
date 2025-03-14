@@ -1,0 +1,49 @@
+seml:
+  executable: rcp/training/main.py
+  name: rcp_training
+  output_dir: ~/log
+  project_root_dir: ../../
+
+slurm:
+  - experiments_per_job: 1
+    sbatch_options:
+      gres: gpu:1    
+      mem: 30G        
+      cpus-per-task: 4 
+      time: 0-10:00     
+      partition: gpu_gtx_1080 
+
+fixed:
+  conf.save: True
+  conf.save_dir: data/models/
+  hparams.dataset_path: data/datasets
+  hparams.device: 'cuda'
+
+  hparams.batch_size_training: 128
+  hparams.batch_size_inference: 300
+  hparams.lr: 0.01
+  hparams.momentum: 0.9
+  hparams.weight_decay: 5e-4
+  hparams.max_epochs: 400
+  hparams.early_stopping: 100
+  hparams.lr_scheduler: "cosine"
+
+  hparams.k_t: 100
+  hparams.pretrained: False
+
+grid:
+  hparams.model_seed:
+    type: choice
+    options:
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+
+resnet18_svhn:
+  fixed:
+    hparams.dataset: "SVHN"
+    hparams.arch: "ResNet18"
+    hparams.in_channels: 3
+    hparams.out_channels: 10

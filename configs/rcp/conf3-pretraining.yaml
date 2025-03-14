@@ -1,0 +1,45 @@
+seml:
+  executable: rcp/cp/main.py
+  name: rcp
+  output_dir: ~/log
+  project_root_dir: ../../
+
+slurm:
+  - experiments_per_job: 1 
+    sbatch_options:
+      gres: gpu:1
+      mem: 30G
+      cpus-per-task: 1
+      time: 0-10:00
+      partition: gpu_gtx_1080 
+
+fixed:
+  conf.save: True
+  conf.save_dir: data/certificates/
+
+  hparams.model_dir: data/models/
+  hparams.seml_training_collection: 'rcp_training'
+  hparams.dataset_path: data/datasets
+  hparams.device: 'cuda'
+
+  hparams.num_cp_splits: 5
+  hparams.score_function: "HPS"
+  hparams.with_softmax: True
+  hparams.arch: "ResNet18"
+
+  hparams.k_t: 100
+  hparams.k_c: 40
+  hparams.alpha: 0.1
+
+grid:
+  hparams.pretrained: 
+    type: choice
+    options:
+      - True
+      - False
+
+cifar10:
+  fixed:
+    hparams.dataset: "CIFAR10"
+    hparams.in_channels: 3
+    hparams.out_channels: 10

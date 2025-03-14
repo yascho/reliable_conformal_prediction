@@ -1,0 +1,4 @@
+data/
+!data/model.pt
+*.egg-info
+__pycache__
