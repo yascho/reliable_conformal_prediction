@@ -52,7 +52,7 @@ seml rcp add configs/rcp/0-cert-setting0.yaml
 seml rcp start
 ```
 
-To reproduce the full results of our paper, first train the required models using the provided [training configurations](configs/training) and then compute the reliable prediction sets and certificates using the provided [RPS configurations](configs/rcp).
+To reproduce the full results of our paper, first train the required models using the provided [training configurations](configs/training) and then compute the reliable prediction sets and certificates using the provided [RCP configurations](configs/rcp).
 
 ## Cite
 Please cite our paper if you use this code in your own work:
