@@ -4,7 +4,7 @@
 
 Reference implementation of the reliable conformal prediction sets (RPS) proposed in the paper:
 
-**<a href='https://openreview.net/pdf?id=51WraMid8K'>Provably Reliable Conformal Prediction Sets in the Presence of Data Poisoning</a>**<br>
+**<a href='https://openreview.net/pdf?id=ofuLWn8DFZ'>Provably Reliable Conformal Prediction Sets in the Presence of Data Poisoning</a>**<br>
 *Yan Scholten, Stephan Günnemann*<br>
 International Conference on Learning Representations, ICLR 2025 (Spotlight)<br>
 [ <a href='https://www.cs.cit.tum.de/daml/reliable-conformal-prediction/'>Project page</a> | <a href='https://openreview.net/pdf?id=ofuLWn8DFZ'>PDF</a> ]
